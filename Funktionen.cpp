@@ -69,6 +69,9 @@ bool reziproke(std::vector<float>& vec){
 
 // Aufgabe 5: Implementiere eine Matrixmultiplikation, die als Argumente zwei
 //            zweidimensionale Vektoren übernimmt.
+#include<iostream>
+#include<vector>
+
 std::vector<std::vector<int>> multiplyMatrices(const std::vector<std::vector<int>>& mat1, const std::vector<std::vector<int>>& mat2) {
     int rows1 = mat1.size();
     int cols1 = mat1[0].size();
@@ -79,7 +82,32 @@ std::vector<std::vector<int>> multiplyMatrices(const std::vector<std::vector<int
     if (cols1 != rows2) {
         throw std::invalid_argument("Die Anzahl der Spalten der ersten Matrix muss gleich der Anzahl der Zeilen der zweiten Matrix sein.");
     }
-};
+
+    // Ergebnismatrix initialisieren
+    std::vector<std::vector<int>> result(rows1, std::vector<int>(cols2, 0));
+
+//    |1 2 3|  *  |9 8 7|  =  |(1*9 + 2*6 + 3*3) (1*8 + 2*5 + 3*2) (1*7 + 2*4 + 3*1)|
+//    |4 5 6|     |6 5 4|     |(4*9 + 5*6 + 6*3) (4*8 + 5*5 + 6*2) (4*7 + 5*4 + 6*1)|
+//    |7 8 9|     |3 2 1|     |(7*9 + 8*6 + 9*3) (7*8 + 8*5 + 9*2) (7*7 + 8*4 + 9*1)|
+
+//                                              | 30  24 18|
+//                                              | 84  69 54|
+//                                              |138 114 90|
+
+
+    // Matrixmultiplikation durchführen
+    for (int i = 0; i < rows1; i++) {
+        for (int j = 0; j < cols2; j++) {
+            for (int k = 0; k < cols1; k++) {
+                result[i][j] += mat1[i][k] * mat2[k][j];
+                std::cout << mat1[i][k] << " * " << mat2[k][j] << std::endl;
+            }
+            std::cout << std::endl;
+        }
+    }
+
+    return result;
+}
 
 // Aufgabe 6: Implentiere den Heapsort- Algorithmus.
 
@@ -180,19 +208,26 @@ int main() {
 
     // Aufgabe 5
     std::cout << "Aufgabe 5" << std::endl;
-    // std::vector<std::vector<int>> mat1 = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
-    // std::vector<std::vector<int>> mat2 = {{9, 8, 7}, {6, 5, 4}, {3, 2, 1}};
-    // // std::vector<std::vector<int>> result = {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}};
-    // // Matrizen multiplizieren
-    // std::vector<std::vector<int>> result1 = multiplyMatrices(mat1, mat2);
+    std::vector<std::vector<int>> mat1 = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+    std::vector<std::vector<int>> mat2 = {{9, 8, 7}, {6, 5, 4}, {3, 2, 1}};
+    // Matrizen multiplizieren
+    std::vector<std::vector<int>> result1 = multiplyMatrices(mat1, mat2);
 
-    // // Ergebnis ausgeben
-    // for (const auto& row : result1) {
-    //     for (int val : row) {
-    //         std::cout << val << " ";
-    //     }
-    //     std::cout << std::endl;
-    // };
+//    |1 2 3|  *  |9 8 7|  =  |(1*9 + 2*6 + 3*3) (1*8 + 2*5 + 3*2) (1*7 + 2*4 + 3*1)|
+//    |4 5 6|     |6 5 4|     |(4*9 + 5*6 + 6*3) (4*8 + 5*5 + 6*2) (4*7 + 5*4 + 6*1)|
+//    |7 8 9|     |3 2 1|     |(7*9 + 8*6 + 9*3) (7*8 + 8*5 + 9*2) (7*7 + 8*4 + 9*1)|
+
+//                                              | 30  24 18|
+//                                              | 84  69 54|
+//                                              |138 114 90|
+
+    // Ergebnis ausgeben
+    for (const auto& row : result1) {
+        for (int val : row) {
+            std::cout << val << " ";
+        }
+        std::cout << std::endl;
+    };
 
     std::cout << std::endl;
 
