@@ -44,3 +44,6 @@ Location soll folgende Attribute haben:
   
 - Überlade den Operator + in der Location Klasse so, dass die jeweiligen 
   Speisekarten zusammengeführt werden.
+
+- Schreibe eine Funktion, die einen Vektor von Anzahl n Objekten der Person- oder der 
+  Location- Klasse zurückgibt.
