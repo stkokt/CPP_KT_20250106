@@ -1,7 +1,7 @@
 #include "personen.h"
 
-int Personen::pers_cnt = 0;
-
+static int pers_cnt = 0;
+// TODO: anything
 Personen::Personen() {pers_cnt +=1;}
 
 
