@@ -3,23 +3,26 @@
 static int loc_cnt = 0;
 
 // Standardkonstruktor
-location::location() {}
+location::location() {loc_cnt += 1;}
 
 // Kopierkonstruktor
 location::location(const location & loc)
 {
+    loc_cnt += 1;
     this->name = loc.name;
     this->menu = loc.menu;
 
 }
 
 location::location(std::string Name, std::map<std::string, float> Speisekarte) : name(Name), menu(Speisekarte) {
+    loc_cnt += 1;
     std::cout << name << " hat geöffnet!" << std::endl;
 }
 
 // Kopierzuweisungskonstruktor
 location &location::operator=(const location & loc)
 {
+    loc_cnt += 1;
     this->name = loc.name;
     this->menu = loc.menu;
     return *this;

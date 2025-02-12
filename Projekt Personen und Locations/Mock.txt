@@ -22,10 +22,10 @@ Location soll folgende Attribute haben:
 - Außerdem soll es eine Methode "Show_Menu" geben.
 - Diese soll dem Gast die Speisekarte zeigen.
  
- 
+
 10.02.2025
  
-- Beide Klassen modularisieren, falls noch nicht geschehen.
+- Beide Klassen modularisieren, falls noch nicht geschehen. // done
  
 - Setze die Rule of 5 für beide Klassen um.
   - An der Klasse Person sollen alle Kopier- und Movekonstruktoren ausgeschaltet sein
@@ -38,3 +38,11 @@ Location soll folgende Attribute haben:
  
 - Schreibe eine Funktion, die einen Vektor von Anzahl n Objekten der Person- oder der 
   Location- Klasse zurückgibt.
+
+
+12.02.2025
+
+- Vererbung
+    - Location -> Restaurant, Shop
+    - Personen -> Chef, Mitarbeiter, Kunden
+

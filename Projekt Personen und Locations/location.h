@@ -5,6 +5,8 @@
 #include <iostream>
 #include <map>
 
+// TODO: Konstruktor überladen
+
 class location
 {
 public:

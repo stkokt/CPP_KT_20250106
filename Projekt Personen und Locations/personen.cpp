@@ -1,6 +1,6 @@
 #include "personen.h"
 
-static int pers_cnt = 0;
+int Personen::pers_cnt = 0;
 // TODO: anything
 Personen::Personen() {pers_cnt +=1;}
 

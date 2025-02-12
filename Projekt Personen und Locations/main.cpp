@@ -23,14 +23,12 @@ int main()
     Personen beate("Beate",30);
     beate.setGeschlecht('w');
 
-    Personen* pinoccio = new Personen("Pinoccio", 120, 'd');
-
+    Personen susi("Susi", 120, 'w');
 
     cout<<ralf.getName()<<"("<<ralf.getGeschlecht()<<") ist "<< ralf.getAlter() <<" Jahre alt." << endl;
     cout<<beate.getName()<<"("<<beate.getGeschlecht()<<") ist "<< beate.getAlter() <<" Jahre alt." << endl;
-    cout<<pinoccio -> getName()<<"("<<pinoccio -> getGeschlecht()<<") ist "<< pinoccio -> getAlter() <<" Jahre alt." << endl;
+    cout<<susi.getName()<<"("<<susi.getGeschlecht()<<") ist "<< susi.getAlter() <<" Jahre alt." << endl;
 
-    delete pinoccio;
 
     ralf.dining(sushi);
 
