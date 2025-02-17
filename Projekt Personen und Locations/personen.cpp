@@ -63,15 +63,17 @@ void Personen::setKontostand(float newKontostand) {
     kontostand -= newKontostand;
 }
 
-Chef::Chef() : Personen() {}
+Chef::Chef() : Personen() {std::cout << "Ein Chef ist geboren" << std::endl;}
 
-Chef::Chef(std::string name) : Personen(name) {}
+Chef::Chef(std::string name) : Personen(name) {std::cout << "Chef " << this->getName() << " ist geboren" << std::endl;}
 
-Chef::Chef(std::string name, int alter) : Personen(name, alter) {}
+Chef::Chef(std::string name, int alter) : Personen(name, alter) {std::cout << "Chef " << this->getName() << " ist geboren" << std::endl;}
 
-Chef::Chef(std::string name, int alter, char geschlecht) : Personen(name, alter, geschlecht) {}
+Chef::Chef(std::string name, int alter, char geschlecht) : Personen(name, alter, geschlecht) {std::cout << "Chef " << this->getName() << " ist geboren" << std::endl;}
 
-void Chef::dining(location loc) const {
+Chef::~Chef(){std::cout << "Chef " << this->getName() << " ist gestorben" << std::endl;}
+
+void Chef::dining(location loc) {
     int choice;
     loc.show_map();
 
@@ -88,8 +90,17 @@ void Chef::dining(location loc) const {
     }
 }
 
+Mitarbeiter::Mitarbeiter() : Personen() {std::cout << "Ein Mitarbeiter ist geboren" << std::endl;}
 
-/*void Mitarbeiter::dining(location loc) {
+Mitarbeiter::Mitarbeiter(std::string name) : Personen(name) {std::cout << "Mitarbeiter " << this->getName() << " ist geboren" << std::endl;}
+
+Mitarbeiter::Mitarbeiter(std::string name, int alter) : Personen(name, alter) {std::cout << "Mitarbeiter " << this->getName() << " ist geboren" << std::endl;}
+
+Mitarbeiter::Mitarbeiter(std::string name, int alter, char geschlecht) : Personen(name, alter, geschlecht) {std::cout << "Mitarbeiter " << this->getName() << " ist geboren" << std::endl;}
+
+Mitarbeiter::~Mitarbeiter() {std::cout << "Mitarbeiter " << this->getName() << " ist gestorben" << std::endl;}
+
+void Mitarbeiter::dining(location loc) {
 
     int choice;
     loc.show_map();
@@ -109,6 +120,16 @@ void Chef::dining(location loc) const {
 
     }
 }
+
+Kunde::Kunde() : Personen() {std::cout << "Ein Kunde ist geboren" << std::endl;}
+
+Kunde::Kunde(std::string name) : Personen(name) {std::cout << "Kunde " << this->getName() << " ist geboren" << std::endl;}
+
+Kunde::Kunde(std::string name, int alter) : Personen(name, alter) {std::cout << "Kunde " << this->getName() << " ist geboren" << std::endl;}
+
+Kunde::Kunde(std::string name, int alter, char geschlecht) : Personen(name, alter, geschlecht) {std::cout << "Kunde " << this->getName() << " ist geboren" << std::endl;}
+
+Kunde::~Kunde() {std::cout << "Kunde " << this->getName() << " ist gestorben" << std::endl;}
 
 void Kunde::dining(location loc) {
 
@@ -130,4 +151,4 @@ void Kunde::dining(location loc) {
 
     }
 }
-*/
+

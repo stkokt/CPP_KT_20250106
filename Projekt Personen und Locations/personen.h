@@ -22,7 +22,7 @@ public:
     virtual ~Personen();
 
     // Reine virtuelle Methode
-    virtual void dining(location loc) const = 0;
+    virtual void dining(location loc) = 0;
 
     // Getter und Setter
     std::string getName() const;
@@ -65,13 +65,16 @@ public:
     Chef(std::string name, int alter);
     Chef(std::string name, int alter, char geschlecht);
 
+    // Destruktor
+    ~Chef();
+
     // Implementierung der reinen virtuellen Methode
-    void dining(location loc) const override;
+    void dining(location loc) override;
 };
 
 
 
-/*class Mitarbeiter : public Personen{
+class Mitarbeiter : public Personen{
 public:
 
     Mitarbeiter();
@@ -79,13 +82,15 @@ public:
     Mitarbeiter(Mitarbeiter &&) = delete;      // Move- Konstruktor
     Mitarbeiter &operator=(const Mitarbeiter &) = delete;  // Copy- Assignment- Konstruktor
     Mitarbeiter &operator=(Mitarbeiter &&) = delete;       // Move- Assignment- Konstruktor
-    ~Mitarbeiter();
 
 
     // Überladene Konstruktoren
     Mitarbeiter(std::string name);
     Mitarbeiter(std::string name, int alter);
     Mitarbeiter(std::string name, int alter, char geschlecht);
+
+    // Destruktor
+    ~Mitarbeiter();
 
     void dining(location loc) ;
 };
@@ -98,7 +103,7 @@ public:
     Kunde(Chef &&) = delete;      // Move- Konstruktor
     Kunde &operator=(const Kunde &) = delete;  // Copy- Assignment- Konstruktor
     Kunde &operator=(Kunde &&) = delete;       // Move- Assignment- Konstruktor
-    ~Kunde();
+
 
 
     // Überladene Konstruktoren
@@ -106,7 +111,10 @@ public:
     Kunde(std::string name, int alter);
     Kunde(std::string name, int alter, char geschlecht);
 
+    // Destruktor
+    ~Kunde();
+
     void dining(location loc) ;
-};*/
+};
 
 #endif // PERSONEN_H
