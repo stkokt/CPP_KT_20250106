@@ -1,6 +1,6 @@
 #include "location.h"
 
-static int loc_cnt = 0;
+int location::loc_cnt = 0;
 
 // Standardkonstruktor
 location::location() {loc_cnt += 1;}
@@ -14,11 +14,6 @@ location::location(const location & loc)
 
 }
 
-location::location(std::string Name, std::map<std::string, float> Speisekarte) : name(Name), menu(Speisekarte) {
-    loc_cnt += 1;
-    std::cout << name << " hat geöffnet!" << std::endl;
-}
-
 // Kopierzuweisungskonstruktor
 location &location::operator=(const location & loc)
 {
@@ -27,6 +22,13 @@ location &location::operator=(const location & loc)
     this->menu = loc.menu;
     return *this;
 }
+
+// Überladener Konstruktor (Name und Karte als Argumente)
+location::location(std::string Name, std::map<std::string, float> Speisekarte) : name(Name), menu(Speisekarte) {
+    loc_cnt += 1;
+    std::cout << name << " hat geöffnet!" << std::endl;
+}
+
 
 void location::show_map(){
 

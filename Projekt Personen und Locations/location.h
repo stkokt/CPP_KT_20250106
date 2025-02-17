@@ -5,17 +5,17 @@
 #include <iostream>
 #include <map>
 
-// TODO: Konstruktor überladen
 
 class location
 {
 public:
-    location();
-    location(const location & loc);
-    location(location &&) = delete;
-    location &operator=(const location & loc);
-    location &operator=(location &&) = delete;
+    location(); // Standardkonstruktor
+    location(const location & loc); // Kopierkonstruktor
+    location(location &&) = delete; // Move- Konstruktor
+    location &operator=(const location & loc); // Kopierzuweisungskonstruktor
+    location &operator=(location &&) = delete; // Move- Zuweisungskonstruktor
 
+    // Überladener Konstruktor (Name und Karte als Argumente)
     location(std::string Name, std::map<std::string, float> Speisekarte);
 
     void show_map();
@@ -29,7 +29,7 @@ public:
     float getEinnahmen() const;
     void setEinnahmen(float newEinnahmen);
 
-
+    static int loc_cnt;
 
 private:
     std::string name;

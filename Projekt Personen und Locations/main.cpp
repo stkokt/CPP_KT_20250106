@@ -16,18 +16,18 @@ int main()
 
     location sushi("MamaSan", sushi_menu);
 
-    Personen ralf = Personen("Ralf");
+    Chef ralf("Ralf");
     ralf.setAlter(50);
     ralf.setGeschlecht('m');
 
-    Personen beate("Beate",30);
-    beate.setGeschlecht('w');
+//    Mitarbeiter beate("Beate",30);
+//    beate.setGeschlecht('w');
 
-    Personen susi("Susi", 120, 'w');
+//    Kunde susi("Susi", 120, 'w');
 
     cout<<ralf.getName()<<"("<<ralf.getGeschlecht()<<") ist "<< ralf.getAlter() <<" Jahre alt." << endl;
-    cout<<beate.getName()<<"("<<beate.getGeschlecht()<<") ist "<< beate.getAlter() <<" Jahre alt." << endl;
-    cout<<susi.getName()<<"("<<susi.getGeschlecht()<<") ist "<< susi.getAlter() <<" Jahre alt." << endl;
+//    cout<<beate.getName()<<"("<<beate.getGeschlecht()<<") ist "<< beate.getAlter() <<" Jahre alt." << endl;
+//    cout<<susi.getName()<<"("<<susi.getGeschlecht()<<") ist "<< susi.getAlter() <<" Jahre alt." << endl;
 
 
     ralf.dining(sushi);

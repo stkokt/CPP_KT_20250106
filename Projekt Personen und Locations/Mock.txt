@@ -3,7 +3,7 @@ Aufgabe OOP C++
 05.02.2025
  
 Erstellt zwei Klassen (oder Strukturen) Person und Location.
-PERSON
+PERSON  // done
 Person soll folgende Attribute haben:
 - "Name", soll über den Konstruktor zugewiesen werden. 
 - "Kontostand", mit 100 initialisiert.
@@ -12,7 +12,7 @@ Person soll folgende Attribute haben:
 - Die Methode die Speisekarte der Location aufrufen.
   Wenn die Person ein Menü wählt, soll ihr der Preis vom Kontostand abgezogen
   und den Einnahmen der Location gutgeschrieben werden.
-LOCATION
+LOCATION    // done
 Location soll folgende Attribute haben:
 - "Name", soll über den Konstruktor zugewiesen werden.
 - "Menu", soll über den Konstruktor zugewiesen werden.
@@ -28,11 +28,11 @@ Location soll folgende Attribute haben:
 - Beide Klassen modularisieren, falls noch nicht geschehen. // done
  
 - Setze die Rule of 5 für beide Klassen um.
-  - An der Klasse Person sollen alle Kopier- und Movekonstruktoren ausgeschaltet sein
-  - An der Klasse Location sollen nur die Movekonstruktoren ausgeschaltet sein.
+  - An der Klasse Person sollen alle Kopier- und Movekonstruktoren ausgeschaltet sein // done
+  - An der Klasse Location sollen nur die Movekonstruktoren ausgeschaltet sein.       // done
  
 - Setze in jede Klasse eine statische Zählvariable und verwende sie in Kontruktoren
-  und Destruktoren.
+  und Destruktoren.                                                                   // done
 - Überlade den Operator + in der Location Klasse so, dass die jeweiligen 
   Speisekarten zusammengeführt werden.
  
