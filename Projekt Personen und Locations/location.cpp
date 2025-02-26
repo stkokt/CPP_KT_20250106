@@ -10,7 +10,7 @@ location::location(const location & loc)
 {
     loc_cnt += 1;
     this->name = loc.name;
-    this->menu = loc.menu;
+    this->service = loc.service;
 
 }
 
@@ -19,17 +19,21 @@ location &location::operator=(const location & loc)
 {
     loc_cnt += 1;
     this->name = loc.name;
-    this->menu = loc.menu;
+    this->service = loc.service;
     return *this;
 }
 
 // Überladener Konstruktor (Name und Karte als Argumente)
-location::location(std::string Name, std::map<std::string, float> Speisekarte) : name(Name), menu(Speisekarte) {
+location::location(std::string Name, std::map<std::string, float> Speisekarte) : name(Name), service(Speisekarte) {
     loc_cnt += 1;
     std::cout << name << " hat geöffnet!" << std::endl;
 }
 
 
+// Destruktor
+
+location::~location(){};
+/*
 void location::show_map(){
 
     int num = 1;
@@ -42,19 +46,39 @@ void location::show_map(){
 
 
 }
+*/
+
 
 // Getter und Setter
 std::string location::getName() const {return name;}
 
 void location::setName(const std::string &newName) {name = newName;}
 
-std::map<std::string, float> location::getMenu() const {return menu;}
+std::map<std::string, float> location::getService() const {return service;}
 
-void location::setMenu(const std::map<std::string, float> &newMenu) {menu = newMenu;}
+void location::setService(const std::map<std::string, float> &newMenu) {service = newMenu;}
 
 float location::getEinnahmen() const {return einnahmen;}
 
 void location::setEinnahmen(float newEinnahmen) {einnahmen += newEinnahmen;}
+
+
+
+Shop::Shop() : location(){}; // Standardkonstruktor
+//Shop::Shop(const location & loc) : location(const location & loc){}; // Kopierkonstruktor
+//location &operator=(const location & loc); // Kopierzuweisungskonstruktor
+
+// Überladener Konstruktor (Name und Karte als Argumente)
+Shop::Shop(std::string Name, std::map<std::string, float> Service) : location(Name, Service)
+{
+
+};
+
+// Destruktor
+
+Shop::~Shop(){};
+
+void show_service(){};
 
 
 

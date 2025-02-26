@@ -22,7 +22,7 @@ public:
     virtual ~Personen();
 
     // Reine virtuelle Methode
-    virtual void dining(location loc) = 0;
+    virtual void dining(location* loc) = 0;
 
     // Getter und Setter
     std::string getName() const;
@@ -69,7 +69,7 @@ public:
     ~Chef();
 
     // Implementierung der reinen virtuellen Methode
-    void dining(location loc) override;
+    void dining(location* loc) override;
 };
 
 
@@ -92,7 +92,7 @@ public:
     // Destruktor
     ~Mitarbeiter();
 
-    void dining(location loc) ;
+    void dining(location* loc) override;
 };
 
 class Kunde : public Personen{
@@ -114,7 +114,7 @@ public:
     // Destruktor
     ~Kunde();
 
-    void dining(location loc) ;
+    void dining(location* loc) override;
 };
 
 #endif // PERSONEN_H
